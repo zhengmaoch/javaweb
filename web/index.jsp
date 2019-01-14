@@ -8,9 +8,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    <title>$Title$</title>
+    <title>首页</title>
   </head>
   <body>
-  $END$
+  <a href="${pageContext.request.contextPath}/servlet/RegisterUIServlet">注册</a>
+  <a href="${pageContext.request.contextPath}/servlet/LoginUIServlet">登录</a>
   </body>
 </html>
