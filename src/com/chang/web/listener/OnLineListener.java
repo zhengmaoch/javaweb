@@ -1,4 +1,4 @@
-package com.chang.web;
+package com.chang.web.listener;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
@@ -9,11 +9,12 @@ import javax.servlet.http.HttpSessionListener;
 import javax.servlet.http.HttpSessionBindingEvent;
 
 @WebListener()
-public class Listener implements ServletContextListener,
+public class OnLineListener implements ServletContextListener,
         HttpSessionListener, HttpSessionAttributeListener {
 
+    public int count = 0;
     // Public constructor is required by servlet spec
-    public Listener() {
+    public OnLineListener() {
     }
 
     // -------------------------------------------------------
@@ -38,10 +39,15 @@ public class Listener implements ServletContextListener,
     // -------------------------------------------------------
     public void sessionCreated(HttpSessionEvent se) {
         /* Session is created. */
+        count++;
+        System.out.println("当前在线人数为" + count);
+        se.getSession().getServletContext().setAttribute("count",count);
     }
 
     public void sessionDestroyed(HttpSessionEvent se) {
         /* Session is destroyed. */
+        count--;
+        se.getSession().getServletContext().setAttribute("count",count);
     }
 
     // -------------------------------------------------------

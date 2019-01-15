@@ -26,7 +26,7 @@
     </script>
 </head>
 <body style="text-align: center">
-<div align="right">${user.nikename }，欢迎您! &nbsp;&nbsp;&nbsp;<a href="${pageContext.request.contextPath}/servlet/LogoutServlet">退出</a></div>
+<div align="right">${user.nikename }，欢迎您!当前${count }人在线！&nbsp;&nbsp;&nbsp;&nbsp;<a href="${pageContext.request.contextPath}/servlet/LogoutServlet">退出</a></div>
 <br/><br/>
 <c:if test="${!empty(users)}">
 <table width="70%" border="1" cellspacing="4" cellpadding="4" align="center" style="border-collapse: collapse">
