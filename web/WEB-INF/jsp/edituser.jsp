@@ -13,7 +13,7 @@
 <body style="text-align: center">
 <div style="text-align: center">
 <form action="${pageContext.request.contextPath}/servlet/UpdateUserServlet" method="post">
-    <table>
+    <table align="center">
         <tr style="display: none">
             <td>编号:</td>
             <td>

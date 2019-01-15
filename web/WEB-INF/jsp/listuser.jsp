@@ -27,17 +27,17 @@
 </head>
 <body style="text-align: center">
 <div align="right">${user.nikename }，欢迎您! &nbsp;&nbsp;&nbsp;<a href="${pageContext.request.contextPath}/servlet/LogoutServlet">退出</a></div>
-<div style="text-align: center">
+<br/><br/>
 <c:if test="${!empty(user)}">
-<table width="70%" border="1" cellpadding="1" cellspacing="1">
+<table width="70%" border="1" cellspacing="4" cellpadding="4" align="center" style="border-collapse: collapse">
     <tr>
-        <td>编号</td>
-        <td>账号</td>
-        <td>姓名</td>
-        <td>邮箱</td>
-        <td>生日</td>
-        <td>创建日期</td>
-        <td>操作</td>
+        <th>编号</th>
+        <th>账号</th>
+        <th>姓名</th>
+        <th>邮箱</th>
+        <th>生日</th>
+        <th>创建日期</th>
+        <th>操作</th>
     </tr>
 <c:forEach items="${users }" var="user">
     <tr>
@@ -48,7 +48,7 @@
         <td>${user.birthday}</td>
         <td>${user.createdTime}</td>
         <td>
-            <a href="${pageContext.request.contextPath}/servlet/EditUserServlet">编辑</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            <a href="${pageContext.request.contextPath}/servlet/EditUserServlet?id=${user.id}">编辑</a>&nbsp&nbsp&nbsp&nbsp
             <a href="javascript:void(0)" onclick="deleteuser('${user.id}') ">删除</a>
         </td>
     </tr>
