@@ -1,6 +1,7 @@
-package com.chang.web.controllers;
+package com.chang.web.controller;
 
 import com.chang.domain.User;
+import com.chang.exception.UserExistException;
 import com.chang.services.UserService;
 import com.chang.services.impl.UserServiceImpl;
 import com.chang.utils.WebUtils;
@@ -12,35 +13,42 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Date;
 
-@WebServlet(name = "UpdateUserServlet", urlPatterns = "/servlet/UpdateUserServlet")
-public class UpdateUserServlet extends HttpServlet {
+@WebServlet(name = "RegisterServlet", urlPatterns = "/servlet/RegisterServlet")
+public class RegisterServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-        doGet(request,response);
+        doGet(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        request.setCharacterEncoding("UTF-8");
+//        request.setCharacterEncoding("UTF-8");
 
         UserModel form = WebUtils.requestToModel(request, UserModel.class);
         boolean b = form.validate();
 
         if(!b){
             request.setAttribute("form", form);
-            request.getRequestDispatcher("WEB-INF/jsp/edituser.jsp").forward(request,response);
+            request.getRequestDispatcher("WEB-INF/jsp/register.jsp").forward(request,response);
             return;
         }
 
         User user = new User();
         WebUtils.copyModel(form, user);
+        user.setId(WebUtils.generateID());
+        user.setCreatedTime(new Date());
 
         UserService service = new UserServiceImpl();
         try {
-            service.updateUser(user);
-            request.setAttribute("message","恭喜您，编辑成功！");
-            request.getRequestDispatcher("/servlet/ListUserServlet").forward(request,response);
+            service.register(user);
+            request.setAttribute("message","恭喜您，注册成功！浏览器将在3秒后跳转。<meta http-equiv='refresh' content='3;url="+request.getContextPath()+"/index.jsp'>");
+            request.getRequestDispatcher("/message.jsp").forward(request,response);
+            return;
+        } catch (UserExistException e) {
+            form.getErrors().put("username","注册的用户名已存在！");
+//            request.setAttribute("message","注册的用户名已存在！");
+            request.getRequestDispatcher("WEB-INF/jsp/register.jsp").forward(request,response);
             return;
         } catch (Exception e){
             e.printStackTrace();
@@ -48,7 +56,6 @@ public class UpdateUserServlet extends HttpServlet {
             request.getRequestDispatcher("/message.jsp").forward(request,response);
             return;
         }
-
 
     }
 }

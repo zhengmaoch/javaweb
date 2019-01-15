@@ -1,4 +1,4 @@
-package com.chang.web.controllers;
+package com.chang.web.controller;
 
 import com.chang.domain.User;
 import com.chang.services.UserService;

@@ -1,4 +1,4 @@
-package com.chang.web.controllers;
+package com.chang.web.controller;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

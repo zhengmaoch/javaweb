@@ -1,5 +1,6 @@
-package com.chang.web.controllers;
+package com.chang.web.controller;
 
+import com.chang.domain.User;
 import com.chang.services.UserService;
 import com.chang.services.impl.UserServiceImpl;
 
@@ -9,19 +10,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
-@WebServlet(name = "DeleteUserServlet", urlPatterns = "/servlet/DeleteUserServlet")
-public class DeleteUserServlet extends HttpServlet {
+@WebServlet(name = "ListUserServlet", urlPatterns = "/servlet/ListUserServlet")
+public class ListUserServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-doGet(request,response);
+
+        doGet(request,response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        String id = request.getParameter("id");
         UserService service = new UserServiceImpl();
-        service.deleteUser(id);
-
-        request.getRequestDispatcher("/servlet/ListUserServlet").forward(request,response);
+        List<User> users = service.getAllUser();
+        request.setAttribute("users", users);
+        request.getRequestDispatcher("/WEB-INF/jsp/listuser.jsp").forward(request,response);
     }
 }
