@@ -18,6 +18,7 @@ public class UserServiceTest {
         user.setNikename("张三");
         user.setEmail("zhangsan@qq.com");
         user.setBirthday(new Date());
+        user.setCreatedTime(new Date());
 
         UserService service = new UserServiceImpl();
 

@@ -7,10 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9ab9200-615e-4a3b-adb0-73f0d1a2190d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/lib/lombok.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/chang/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/chang/domain/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/chang/test/UserDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/chang/test/UserDaoTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,6 +39,19 @@
         <item name="sample@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
       </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="sample@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="sample: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="sample@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="sample: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="user: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
     </expand>
     <select />
   </component>
@@ -57,41 +69,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/chang/test/UserDaoTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="9" lean-forward="true" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/chang/web/controllers/RegisterServlet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="32" column="34" selection-start-line="32" selection-start-column="34" selection-end-line="32" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/chang/utils/MD5Utils.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="17" column="41" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/chang/domain/User.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+            <state relative-caret-position="323">
+              <caret line="19" column="11" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -138,6 +117,18 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/chang/domain/User.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="13" column="23" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="23" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -163,7 +154,6 @@
         <option value="$PROJECT_DIR$/src/database.properties" />
         <option value="$PROJECT_DIR$/src/com/chang/dao/impl/BaseDao.java" />
         <option value="$PROJECT_DIR$/src/com/chang/dao/impl/UserDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/com/chang/test/UserDaoTest.java" />
         <option value="$PROJECT_DIR$/src/com/chang/exception/UserExistException.java" />
         <option value="$PROJECT_DIR$/src/com/chang/utils/MD5Utils.java" />
         <option value="$PROJECT_DIR$/src/com/chang/services/impl/UserServiceImpl.java" />
@@ -178,6 +168,7 @@
         <option value="$PROJECT_DIR$/src/com/chang/web/formbean/RegisterForm.java" />
         <option value="$PROJECT_DIR$/src/com/chang/web/controllers/RegisterServlet.java" />
         <option value="$PROJECT_DIR$/src/com/chang/utils/WebUtils.java" />
+        <option value="$PROJECT_DIR$/src/com/chang/test/UserDaoTest.java" />
         <option value="$PROJECT_DIR$/src/com/chang/domain/User.java" />
       </list>
     </option>
@@ -283,7 +274,7 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547513538559" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547513799648" />
     <property name="database.console.LAST_STATE" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/web/WEB-INF/lib" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -493,7 +484,7 @@
       <workItem from="1547378077356" duration="7016000" />
       <workItem from="1547444143066" duration="850000" />
       <workItem from="1547458917657" duration="777000" />
-      <workItem from="1547511705830" duration="1817000" />
+      <workItem from="1547511705830" duration="2084000" />
     </task>
     <task id="LOCAL-00001" summary="111">
       <created>1546845846422</created>
@@ -509,13 +500,17 @@
       <option name="project" value="LOCAL" />
       <updated>1546846065199</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="添加lombok注解标签">
+      <created>1547513631761</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1547513631761</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="UserDaoTest_testAdd - 2019.01.09 at 16h 53m 25s.xml">
-      <configuration name="UserDaoTest.testAdd" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="UserDaoTest_testAdd - 2019.01.09 at 16h 57m 38s.xml">
       <configuration name="UserDaoTest.testAdd" configurationId="JUnit" />
     </history-entry>
@@ -543,15 +538,19 @@
     <history-entry file="UserServiceTest_testLogin - 2019.01.13 at 19h 49m 00s.xml">
       <configuration name="UserServiceTest.testLogin" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="UserDaoTest_testAdd - 2019.01.15 at 08h 52m 34s.xml">
+      <configuration name="UserDaoTest.testAdd" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25472000" />
+    <option name="totallyTimeSpent" value="25739000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.54689986" visible="true" weight="0.1652452" />
-      <window_info id="Structure" order="1" sideWeight="0.45310014" side_tool="true" visible="true" weight="0.1652452" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.54788417" visible="true" weight="0.1652452" />
+      <window_info id="Structure" order="1" sideWeight="0.4521158" side_tool="true" visible="true" weight="0.1652452" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Capture Tool" order="4" />
@@ -561,7 +560,7 @@
       <window_info anchor="bottom" id="Database Console" weight="0.32962137" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.3514431" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.2746032" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.27394208" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3674833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -573,7 +572,7 @@
       <window_info anchor="bottom" id="Java Enterprise" order="11" />
       <window_info anchor="bottom" id="Database Changes" order="12" />
       <window_info anchor="bottom" id="Version Control" order="13" weight="0.32962137" />
-      <window_info active="true" anchor="bottom" id="Messages" order="14" visible="true" weight="0.29955456" />
+      <window_info anchor="bottom" id="Messages" order="14" weight="0.29955456" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -590,7 +589,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="111" />
-    <option name="LAST_COMMIT_MESSAGE" value="111" />
+    <MESSAGE value="添加lombok注解标签" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加lombok注解标签" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -721,34 +721,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/chang/web/controllers/RegisterServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="32" column="34" selection-start-line="32" selection-start-column="34" selection-end-line="32" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/chang/utils/MD5Utils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="17" column="41" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/login.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="13" column="35" selection-start-line="13" selection-start-column="35" selection-end-line="13" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://429b44f7-12be-4a49-9efb-685fa6bb1f2d/schema/sample/table/user">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -779,16 +755,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/chang/test/UserDaoTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="9" lean-forward="true" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/chang/test/UserServiceTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -799,10 +765,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/chang/utils/MD5Utils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="41" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/chang/web/controllers/RegisterServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="32" column="34" selection-start-line="32" selection-start-column="34" selection-end-line="32" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://429b44f7-12be-4a49-9efb-685fa6bb1f2d/schema/sample/table/user">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/chang/test/UserDaoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="11" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/chang/domain/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        <state relative-caret-position="221">
+          <caret line="13" column="23" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

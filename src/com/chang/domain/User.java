@@ -12,4 +12,5 @@ public class User {
     private String email;
     private Date birthday;
     private String nikename;
+    private Date createdTime;
 }

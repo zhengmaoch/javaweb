@@ -17,6 +17,7 @@ public class UserDaoTest {
         user.setNikename("张三");
         user.setEmail("zhangsan@qq.com");
         user.setBirthday(new Date());
+        user.setCreatedTime(new Date());
 
         UserDaoImpl dao = new UserDaoImpl();
         dao.add(user);
@@ -35,6 +36,7 @@ public class UserDaoTest {
         user.setNikename("张三");
         user.setEmail("zhangsan@qq.com");
         user.setBirthday(new Date());
+        user.setCreatedTime(new Date());
 
         UserDaoImpl dao = new UserDaoImpl();
         dao.add(user);
@@ -57,6 +59,7 @@ public class UserDaoTest {
         user.setNikename("张三");
         user.setEmail("zhangsan@qq.com");
         user.setBirthday(new Date());
+        user.setCreatedTime(new Date());
 
         UserDaoImpl dao = new UserDaoImpl();
         dao.add(user);
@@ -83,6 +86,7 @@ public class UserDaoTest {
         user.setNikename("张三");
         user.setEmail("zhangsan@qq.com");
         user.setBirthday(new Date());
+        user.setCreatedTime(new Date());
 
         UserDaoImpl dao = new UserDaoImpl();
         dao.add(user);
