@@ -21,7 +21,7 @@ public class LogoutServlet extends HttpServlet {
             session.removeAttribute("user");
         }
 
-        request.setAttribute("message","注销成功，浏览器将在3秒后跳转。<meta http-equiv='refresh' content='3;url="+request.getContextPath()+"/index.jsp'>");
+        request.setAttribute("message","注销成功！浏览器将在3秒后跳转。<meta http-equiv='refresh' content='3;url="+request.getContextPath()+"/index.jsp'>");
         request.getRequestDispatcher("/message.jsp").forward(request,response);
     }
 }

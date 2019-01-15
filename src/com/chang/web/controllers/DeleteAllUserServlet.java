@@ -26,6 +26,6 @@ public class DeleteAllUserServlet extends HttpServlet {
             service.deleteUser(user.getId());
         }
 
-        request.getRequestDispatcher("/WEB-INF/jsp/listuser.jsp").forward(request,response);
+        request.getRequestDispatcher("/servlet/ListUserServlet").forward(request,response);
     }
 }

@@ -33,7 +33,7 @@ public class LoginServlet extends HttpServlet {
             return;
         }
 
-        request.setAttribute("message", "用户名或密码错误！");
+        request.setAttribute("message", "用户名或密码错误！浏览器将在3秒后跳转。<meta http-equiv='refresh' content='3;url="+request.getContextPath()+"/servlet/LoginUIServlet'>");
         request.getRequestDispatcher("/message.jsp").forward(request, response);
     }
 }

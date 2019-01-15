@@ -1,11 +1,10 @@
 package com.chang.web.controllers;
 
 import com.chang.domain.User;
-import com.chang.exception.UserExistException;
 import com.chang.services.UserService;
 import com.chang.services.impl.UserServiceImpl;
 import com.chang.utils.WebUtils;
-import com.chang.web.formbean.RegisterForm;
+import com.chang.web.model.UserModel;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,9 +12,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 @WebServlet(name = "UpdateUserServlet", urlPatterns = "/servlet/UpdateUserServlet")
 public class UpdateUserServlet extends HttpServlet {
@@ -28,7 +24,7 @@ public class UpdateUserServlet extends HttpServlet {
 
         request.setCharacterEncoding("UTF-8");
 
-        RegisterForm form = WebUtils.requestToBean(request, RegisterForm.class);
+        UserModel form = WebUtils.requestToModel(request, UserModel.class);
         boolean b = form.validate();
 
         if(!b){
@@ -38,7 +34,7 @@ public class UpdateUserServlet extends HttpServlet {
         }
 
         User user = new User();
-        WebUtils.copyBean(form, user);
+        WebUtils.copyModel(form, user);
 
         UserService service = new UserServiceImpl();
         try {

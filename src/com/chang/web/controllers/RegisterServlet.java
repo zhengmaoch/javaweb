@@ -5,7 +5,7 @@ import com.chang.exception.UserExistException;
 import com.chang.services.UserService;
 import com.chang.services.impl.UserServiceImpl;
 import com.chang.utils.WebUtils;
-import com.chang.web.formbean.RegisterForm;
+import com.chang.web.model.UserModel;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -25,7 +25,7 @@ public class RegisterServlet extends HttpServlet {
 
         request.setCharacterEncoding("UTF-8");
 
-        RegisterForm form = WebUtils.requestToBean(request, RegisterForm.class);
+        UserModel form = WebUtils.requestToModel(request, UserModel.class);
         boolean b = form.validate();
 
         if(!b){
@@ -35,14 +35,14 @@ public class RegisterServlet extends HttpServlet {
         }
 
         User user = new User();
-        WebUtils.copyBean(form, user);
+        WebUtils.copyModel(form, user);
         user.setId(WebUtils.generateID());
         user.setCreatedTime(new Date());
 
         UserService service = new UserServiceImpl();
         try {
             service.register(user);
-            request.setAttribute("message","恭喜您，注册成功！<meta http-equiv='refresh' content='3;url="+request.getContextPath()+"/index.jsp'>");
+            request.setAttribute("message","恭喜您，注册成功！浏览器将在3秒后跳转。<meta http-equiv='refresh' content='3;url="+request.getContextPath()+"/index.jsp'>");
             request.getRequestDispatcher("/message.jsp").forward(request,response);
             return;
         } catch (UserExistException e) {

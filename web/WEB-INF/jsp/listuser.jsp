@@ -28,7 +28,7 @@
 <body style="text-align: center">
 <div align="right">${user.nikename }，欢迎您! &nbsp;&nbsp;&nbsp;<a href="${pageContext.request.contextPath}/servlet/LogoutServlet">退出</a></div>
 <br/><br/>
-<c:if test="${!empty(user)}">
+<c:if test="${!empty(users)}">
 <table width="70%" border="1" cellspacing="4" cellpadding="4" align="center" style="border-collapse: collapse">
     <tr>
         <th>编号</th>
@@ -60,7 +60,7 @@
     </tr>
 </table>
 </c:if>
-<c:if test="${empty(user)}">
+<c:if test="${empty(users)}">
     没有任何用户存在！
 </c:if>
 </div>

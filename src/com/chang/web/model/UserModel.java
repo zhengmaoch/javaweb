@@ -1,4 +1,4 @@
-package com.chang.web.formbean;
+package com.chang.web.model;
 
 import lombok.Data;
 
@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Data
-public class RegisterForm {
+public class UserModel {
     private String id;
     private String username;
     private String password;

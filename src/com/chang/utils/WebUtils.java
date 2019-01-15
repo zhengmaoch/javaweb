@@ -1,7 +1,7 @@
 package com.chang.utils;
 
 import com.chang.domain.User;
-import com.chang.web.formbean.RegisterForm;
+import com.chang.web.model.UserModel;
 import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.beanutils.ConvertUtils;
 import org.apache.commons.beanutils.Converter;
@@ -15,7 +15,7 @@ import java.util.UUID;
 
 public class WebUtils {
 
-    public static <T> T requestToBean(HttpServletRequest request, Class<T> beanClass){
+    public static <T> T requestToModel(HttpServletRequest request, Class<T> beanClass){
         try {
             T bean = beanClass.newInstance();
 
@@ -32,7 +32,7 @@ public class WebUtils {
 
     }
 
-    public static void copyBean(RegisterForm form, User user) {
+    public static void copyModel(UserModel form, User user) {
         ConvertUtils.register(new Converter() {
             @Override
             public Object convert(Class type, Object o) {

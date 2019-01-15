@@ -1,4 +1,4 @@
-package com.chang.web.UI;
+package com.chang.web.view;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
