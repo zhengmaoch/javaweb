@@ -6,9 +6,11 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <html>
 <head>
     <title>用户信息</title>
+    <script language="javascript" type="text/javascript" src="js/WdatePicker.js"></script>
 </head>
 <body style="text-align: center">
 <div style="text-align: center">
@@ -41,7 +43,7 @@
             <tr>
                 <td>生日:</td>
                 <td>
-                    <input type="text" name="birthday" value="${user.birthday }">
+                    <input id="d11" type="text" name="birthday" value="${user.birthday }" onClick="WdatePicker()">
                 </td>
             </tr>
             <tr>
