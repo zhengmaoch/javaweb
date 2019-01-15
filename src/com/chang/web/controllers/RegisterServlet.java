@@ -42,7 +42,7 @@ public class RegisterServlet extends HttpServlet {
         UserService service = new UserServiceImpl();
         try {
             service.register(user);
-            request.setAttribute("message","恭喜您，注册成功！<meta http-equiv='refresh' content='3;url=\"+request.getContextPath()+\"/index.jsp'>");
+            request.setAttribute("message","恭喜您，注册成功！<meta http-equiv='refresh' content='3;url="+request.getContextPath()+"/index.jsp'>");
             request.getRequestDispatcher("/message.jsp").forward(request,response);
             return;
         } catch (UserExistException e) {
