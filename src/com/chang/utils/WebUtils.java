@@ -3,9 +3,15 @@ package com.chang.utils;
 import com.chang.domain.User;
 import com.chang.web.formbean.RegisterForm;
 import org.apache.commons.beanutils.BeanUtils;
+import org.apache.commons.beanutils.ConvertUtils;
+import org.apache.commons.beanutils.Converter;
 
 import javax.servlet.http.HttpServletRequest;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Enumeration;
+import java.util.UUID;
 
 public class WebUtils {
 
@@ -27,9 +33,32 @@ public class WebUtils {
     }
 
     public static void copyBean(RegisterForm form, User user) {
+        ConvertUtils.register(new Converter() {
+            @Override
+            public Object convert(Class type, Object o) {
+                if(o == null)
+                return null;
+                String string = (String) o;
+                if(string.trim().equals("")){
+                    return null;
+                }
+                SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+                try {
+                    return df.parse(string);
+                } catch (ParseException e) {
+                    throw new RuntimeException();
+                }
+            }
+        }, Date.class);
+
+        try {
+            BeanUtils.copyProperties(user, form);
+        } catch (Exception e) {
+            throw new RuntimeException();
+        }
     }
 
-    public static String GenerateID() {
-        return null;
+    public static String generateID() {
+        return UUID.randomUUID().toString();
     }
 }

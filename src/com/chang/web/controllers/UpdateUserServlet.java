@@ -13,12 +13,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
-@WebServlet(name = "RegisterServlet", urlPatterns = "/servlet/RegisterServlet")
-public class RegisterServlet extends HttpServlet {
+@WebServlet(name = "UpdateUserServlet", urlPatterns = "/servlet/UpdateUserServlet")
+public class UpdateUserServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doGet(request, response);
+
+        doGet(request,response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -30,25 +33,18 @@ public class RegisterServlet extends HttpServlet {
 
         if(!b){
             request.setAttribute("form", form);
-            request.getRequestDispatcher("WEB-INF/jsp/register.jsp").forward(request,response);
+            request.getRequestDispatcher("WEB-INF/jsp/edituser.jsp").forward(request,response);
             return;
         }
 
         User user = new User();
         WebUtils.copyBean(form, user);
-        user.setId(WebUtils.generateID());
-        user.setCreatedTime(new Date());
 
         UserService service = new UserServiceImpl();
         try {
-            service.register(user);
-            request.setAttribute("message","恭喜您，注册成功！<meta http-equiv='refresh' content='3;url=\"+request.getContextPath()+\"/index.jsp'>");
-            request.getRequestDispatcher("/message.jsp").forward(request,response);
-            return;
-        } catch (UserExistException e) {
-            form.getErrors().put("username","注册的用户名已存在！");
-//            request.setAttribute("message","注册的用户名已存在！");
-            request.getRequestDispatcher("WEB-INF/jsp/register.jsp").forward(request,response);
+            service.updateUser(user);
+            request.setAttribute("message","恭喜您，编辑成功！");
+            request.getRequestDispatcher("/servlet/ListUserServlet").forward(request,response);
             return;
         } catch (Exception e){
             e.printStackTrace();
@@ -56,6 +52,7 @@ public class RegisterServlet extends HttpServlet {
             request.getRequestDispatcher("/message.jsp").forward(request,response);
             return;
         }
+
 
     }
 }

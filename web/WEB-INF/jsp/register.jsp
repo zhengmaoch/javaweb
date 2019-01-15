@@ -10,35 +10,36 @@
 <head>
     <title>用户注册</title>
 </head>
-<body>
+<body style="text-align: center">
+<div style="text-align: center">
 <form action="${pageContext.request.contextPath}/servlet/RegisterServlet" method="post">
     <table>
         <tr>
-            <td>账号</td>
+            <td>账号:</td>
             <td>
                 <input type="text" name="username">
             </td>
         </tr>
         <tr>
-            <td>密码</td>
+            <td>密码:</td>
             <td>
                 <input type="text" name="password">
             </td>
         </tr>
         <tr>
-            <td>邮箱</td>
+            <td>邮箱:</td>
             <td>
                 <input type="text" name="email">
             </td>
         </tr>
         <tr>
-            <td>生日</td>
+            <td>生日:</td>
             <td>
                 <input type="text" name="birthday">
             </td>
         </tr>
         <tr>
-            <td>姓名</td>
+            <td>姓名:</td>
             <td>
                 <input type="text" name="nikename">
             </td>
@@ -53,5 +54,6 @@
         </tr>
     </table>
 </form>
+</div>
 </body>
 </html>

@@ -11,26 +11,27 @@
     <title>用户登录</title>
 </head>
 <body style="text-align: center">
+<div style="text-align: center">
 <form action="${pageContext.request.contextPath}/servlet/LoginServlet" method="post">
     <table>
         <tr>
-            <td>用户名</td>
             <td>
-                <input type="text" name="username"/>
+                用户名:<input type="text" name="username"/>
             </td>
         </tr>
         <tr>
-            <td>密码</td>
             <td>
-                <input type="text" name="password"/>
+                密  码:<input type="text" name="password"/>
             </td>
         </tr>
         <tr>
-            <td colspan="2">
+            <td>
+                <input type="button" name="register" value="注  册" onclick="window.location.href='${pageContext.request.contextPath}/servlet/RegisterUIServlet';"/>
                 <input type="submit" name="login" value="登  录"/>
             </td>
         </tr>
     </table>
 </form>
+</div>
 </body>
 </html>

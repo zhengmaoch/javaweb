@@ -7,6 +7,8 @@ import com.chang.exception.UserExistException;
 import com.chang.services.UserService;
 import com.chang.utils.MD5Utils;
 
+import java.util.List;
+
 public class UserServiceImpl implements UserService {
 
     private UserDao dao = new UserDaoImpl();
@@ -26,5 +28,26 @@ public class UserServiceImpl implements UserService {
     public User login(String username, String password){
         password = MD5Utils.md5(password);
         return dao.find(username,password);
+    }
+
+    @Override
+    public List<User> getAllUser() {
+        return dao.getAllUser();
+    }
+
+    @Override
+    public User getUser(String id) {
+        return dao.getUser(id);
+    }
+
+    @Override
+    public void deleteUser(String id) {
+
+        dao.delete(id);
+    }
+
+    @Override
+    public void updateUser(User user) {
+        dao.update(user);
     }
 }
